@@ -56,21 +56,25 @@
     // Rotary encoder
     #ifdef USEROTARY_ENABLE
         //#define REVERSE_ROTARY                        // To reverse encoder's direction; switching CLK / DT in hardware does the same
-        #define ROTARYENCODER_CLK           34          // rotary encoder's CLK
-        #define ROTARYENCODER_DT            39          // 39 = 'VN'; rotary encoder's DT
+        #define ROTARYENCODER_CLK           112          // rotary encoder's CLK
+        #define ROTARYENCODER_DT            111          // 39 = 'VN'; rotary encoder's DT
     #endif
 
     // Amp enable (optional)
-    #define GPIO_PA_EN                      108         // To enable/disable amp for loudspeaker; connected to port-expander
+    // #define GPIO_PA_EN                      108         // To enable/disable amp for loudspeaker; connected to port-expander
 
     // Control-buttons
-    #define NEXT_BUTTON                     102         // Next-Button: connected to port-expander
-    #define PREVIOUS_BUTTON                 100         // Prev-Button: connected to port-expander
-    #define PAUSEPLAY_BUTTON                101         // Pplay-Button: connected to port-expander
-    #define ROTARYENCODER_BUTTON            103         // Set to 99 to disable the button; connected to port-expander
+    #define NEXT_BUTTON                     105         // Next-Button: connected to port-expander
+    #define PREVIOUS_BUTTON                 107         // Prev-Button: connected to port-expander
+    #define PAUSEPLAY_BUTTON                106         // Pplay-Button: connected to port-expander
+    #define ROTARYENCODER_BUTTON            99         // Set to 99 to disable the button; connected to port-expander
     #define BUTTON_4                        104         // Button 4: connected to port-expander
-    #define BUTTON_5                        105         // Button 5: connected to port-expander
-
+    #define BUTTON_5                        103         // Button 5: connected to port-expander
+    // #define BUTTON_6                        102         // Button 5: connected to port-expander
+    // #define BUTTON_7                        101         // Button 5: connected to port-expander
+    // #define BUTTON_8                        100         // Button 5: connected to port-expander
+    // #define BUTTON_9                        102
+    // #define BUTTON_10                       102
     //#define BUTTONS_LED                   114         // Powers the LEDs of the buttons. Make sure the current consumed by the LEDs can be handled by the used GPIO
 
     // Channels of port-expander can be read cyclic or interrupt-driven. It's strongly recommended to use the interrupt-way!
@@ -88,10 +92,10 @@
     // Wake-up button => this also is the interrupt-pin if port-expander is enabled!
     // Please note: only RTC-GPIOs (0, 4, 12, 13, 14, 15, 25, 26, 27, 32, 33, 34, 35, 36, 39, 99) can be used! Set to 99 to DISABLE.
     // Please note #2: this button can be used as interrupt-pin for port-expander. If so, all pins connected to port-expander can wake up ESPuino.
-    #define WAKEUP_BUTTON                   36          // Defines the button that is used to wake up ESPuino from deepsleep; set to 99 to disable
+    #define WAKEUP_BUTTON                   99          // Defines the button that is used to wake up ESPuino from deepsleep; set to 99 to disable
 
     // Power-control
-    #define POWER                           115         // GPIO used to drive transistor-circuit, that switches off peripheral devices while ESP32-deepsleep
+    #define POWER                           108         // GPIO used to drive transistor-circuit, that switches off peripheral devices while ESP32-deepsleep
     #ifdef POWER
         #define INVERT_POWER                            // If enabled, use inverted logic for POWER circuit, that means peripherals are turned off by writing HIGH
     #endif
@@ -102,7 +106,7 @@
     // (optinal) Headphone-detection
     #ifdef HEADPHONE_ADJUST_ENABLE
         //#define DETECT_HP_ON_HIGH                      // Per default headphones are supposed to be connected if HT_DETECT is LOW. DETECT_HP_ON_HIGH will change this behaviour to HIGH.
-        #define HP_DETECT                   107          // GPIO that detects, if there's a plug in the headphone jack or not; connected to port-expander
+        #define HP_DETECT                   109          // GPIO that detects, if there's a plug in the headphone jack or not; connected to port-expander
     #endif
 
     // (optional) Monitoring of battery-voltage via ADC
